@@ -1,0 +1,40 @@
+{% extends 'base.html'%}
+
+{% block 'main' %}
+{% load static %}
+<!--main start-->
+<div class="row mt-3 mx-auto">
+    {% for x in dishes %}
+    <div class="col-md-3 mt-5">
+      <img src="{{x.pimage.url}} " width="100%" height="150px">
+    </div>
+    <div class="col-md-5 mt-5">
+      <p><b>Dish Name:</b>&nbsp;&nbsp;&nbsp;{{x.name}}</p>
+      <p><b>Price:</b>&nbsp;&nbsp;&nbsp;Rs. {{x.price}}</p>
+      <p><b>Category:</b>&nbsp;&nbsp;&nbsp;{{x.cat}}</p>
+      <p><b>Dish Description:</b>&nbsp;&nbsp;&nbsp;{{x.dishdetails}}</p>
+     
+      <br>
+      <a href="/addtocart/{{x.id}}" class="btn btn-danger">Add to cart</a>
+      <a href="/viewcart" class="btn btn-danger">View cart</a>
+      <a href="/home" class="btn btn-danger">Buy now</a>
+    </div>
+    {% endfor %}
+    {% if success %}
+        <div class="alert alert-success mt-5">
+            {{success}}
+        </div>
+      {% endif %}
+
+      {% if errmsg %}
+        <div class="alert alert-danger mt-5">
+            {{errmsg}}
+        </div>
+      {% endif %}
+      </div>
+<!--main end-->
+
+    
+
+{% endblock 'main' %}
+

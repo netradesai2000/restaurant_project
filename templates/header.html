@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{%static 'assets/css/bootstrap.min.css'%}">
+    <link rel="stylesheet" href="{%static 'assets/css/style.css'%}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body >
+  <style>
+  .sub-header{
+	height:40vh;
+	width:100%;
+	background-image:url('https://media.istockphoto.com/id/1158575977/photo/assorted-indian-food-like-paneer-butter-masala-dal-roti-rice-sabji-gulab-jamun-and-bound.jpg?s=612x612&w=0&k=20&c=UAbpjUw2ccxjhWaeeHCdiNXlYi_YmSh27sxZxZW86YM=');
+	background-position:center;
+	background-size:cover;
+	text-align:center;
+	color:#fff;
+}
+.sub-header h1{
+	margin-top:100px;
+}
+</style>
+
+    <div class="container">
+    <!--navbar-->
+    <section class="sub-header">
+     
+  
+    
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" style= "font-size: large;" >
+        <div class="container-fluid" >
+          <a class="navbar-brand" href="#">
+            <img src="{% static 'assets/images/logo.jpg' %}" alt="Bootstrap" width="50px">
+          </a>
+          <a class="navbar-brand" style="font-family:'Lucida Console' ;color:red;font-size: 25px;"  href="/home"><b>SansKruti</b></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav" style="font-family:'ui-rounded'; font-variant: small-caps;font-size: 20px ;">
+            <ul class="navbar-nav mx-auto  me-2" >
+              <li class="nav-item">
+                <a class="nav-link active" style= "color:black" aria-current="page" href="/home"><b>Home</b></a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link"  style= "color:black" href="/about"><b>About</b></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link"  style= "color:black" href="/menu"><b>menu</b></a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" style= "color:black" href="/viewcart"><b>Cart</b></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" style= "color:black" href="/contact"><b>Contact</b></a>
+              </li>
+              {% if user.is_authenticated %}
+              <li class="nav-item">
+                <a class="nav-link" style= "color:black" href="/logout"><b>Logout</b></a>
+              </li>
+              {% else %}
+              <li class="nav-item">
+                <a class="nav-link" style= "color:black" href="/login"><b>Login</b></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" style= "color:black" href="/register"><b>Register</b></a>
+              </li>
+            
+              {% endif %}
+            </ul>
+            </div>
+        </div>
+      </nav><!--Navbar end-->
+    </section>

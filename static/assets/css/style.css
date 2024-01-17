@@ -1,0 +1,25 @@
+.highlighted {
+    background-color: #000;
+    color: #fff;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* .vertical-line {
+    width: 1px;
+    background-color: #918c8c;
+    height: 100%;
+    position: relative;
+    top: -165vh;
+    left: 26vw;
+} */
+
+.img{
+    background-image: url(/static/assets/images/background.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    height: 113vh;
+
+}

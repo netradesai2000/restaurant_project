@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <style>
+        body {
+
+            background-image: url('https://img.freepik.com/premium-photo/restaurant-cafe-coffee-shop-interior-with-people-abstract-defocused-blur-background_293060-3973.jpg');
+            background-repeat: no-repeat;
+            background-size: Cover;
+            height: 100vh;
+        }
+
+        label {
+            text-transform: uppercase;
+            font-size: larger;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row mt-4">
+            <div class="col-12"></div>
+                <a href="/index" style="text-decoration:none;">Home</a>
+
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-4 shadow mt-5 p4 mx-auto">
+                <h2 class="text-center ">Login</h2>
+                {% if errmsg %}
+                <div class="alert alert-danger">
+                    {{errmsg}}
+                </div>
+                {% endif %}
+                <form action="/login" method="POST">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="input1"class="form-label">Username:</label>
+                        <input type="email" name="uname"class="form-control" id="input1" placeholder="Enter email id">
+                    </div>
+                    <div class="mb-3">
+                        <label for="input1"class="form-label">Password:</label>
+                        <input type="password" name="upass"class="form-control" id="input1" placeholder="atleast 8 character">
+                    </div>
+                    <div class="mb-3" style="text-align:center">
+                        <input type="submit" class="btn btn-danger" value="login">
+                        <br>
+                        Not a User?<a href="/register" style="text-decoration:none;">Register</a>
+                    </div>
+                </form>
+                
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

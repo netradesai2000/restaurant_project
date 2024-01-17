@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block 'main' %}
+
+<!--Main start-->
+<style>
+.about-us{
+	width:80%;
+	margin:auto;
+	padding-top:80px;
+	padding-bottom:50px;
+}
+.about-col{
+	flex-basis:48%;
+	padding: 30px 2px;
+}
+.about-col img{
+	width:100%;
+}
+.about-col h1{
+	padding-top:0;
+}
+about-col p{
+	padding: 15px 0 25px
+}
+</style>
+<h1 style="text-align: center">ABOUT US</h1>
+<section class="about-us">
+	<div class="row">
+		<div class="about-col">
+            <h1>For the love of delicious food</h1>
+                <p> Welcome to our culinary fusion at Sanskruti! Indulge in a harmonious blend of Maharashtrian, Chinese, and Punjabi
+                cuisines under one roof. Our menu invites you to savor the authentic spices of Maharashtra, the savory delights of
+                Chinese wok-tossed creations, and the rich flavors of Punjabi classics. Each dish is a celebration of diverse tastes, 
+                meticulously prepared to tantalize your palate. Join us for a gastronomic journey where Maharashtrian, Chinese, and Punjabi 
+                traditions unite to create a memorable dining experience.</p>
+                <button type="submit"  class="btn btn-danger">EXPLORE NOW</button>
+        </div>
+        <div class="about-col">
+			<img src="static/assets/images/about1.jpg">
+		</div>
+
+    </div>
+</section>
+
+<!--Main end-->
+
+
+{% endblock 'main' %}

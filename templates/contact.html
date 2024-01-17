@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block 'main' %}
+
+<style>
+body
+contact-us{
+   
+	width:80%;
+	margin:auto;
+}
+.contact-col{
+	flex-basis:48%;
+	margin-bottom:30px;
+}
+.contact-col div{
+	display:flex;
+	align-items:center;
+	margin-bottom:40px;
+}
+.contact-col div .fa{
+	font-size:28px;
+	color:#f44336;
+	margin:10px;
+	margin-right:30px;
+}
+.contact-col div p{
+	padding:0;
+}
+.contact-col div h5{
+	font-size:20px;
+	margin-bottom:5px;
+	color:#555;
+	font-weight:400;
+}
+.contact-col input,.contact-col textarea{
+	width:100%;
+	padding:15px;
+	margin-bottom:17px;
+	outline:none;
+	border:1px solid #ccc;
+}
+ 
+
+</style>
+<!--Main start-->
+
+<h1 style="text-align: center">CONTACT US </h1>
+<div class="container mt-5">
+    <div class="contact-us" width= "80%"  margin = "auto">
+        <div class="row">
+            <div class="contact-col" >
+                <div>
+                    <i class="fa fa-home"></i>
+                    <span>
+                        <h5>XYZ Road,ABC Building</h5>
+                        <p>Ratnagiri,Maharashtra,IN</p>
+                    </span>
+                </div>
+                <div>
+                    <i class="fa fa-phone"></i>
+                    <span>
+                        <h5>9422432663</h5>
+                        <p>Monday to saturday, 10AM to 11PM</p>
+                    </span>
+                </div>
+                <div>
+                    <i class="fa fa-envelope"></i>
+                    <span>
+                        <h5>sanskruti31@gmail.com</h5>
+                        <p>Email us your query</p>
+                    </span>
+                </div>
+            </div>
+            <div class="contact-col">
+
+
+                <!-- Contact Form -->
+                {% if errmsg %}
+                <div class="alert alert-danger">
+                    {{errmsg}}
+                </div>
+                {% endif %}
+                <form action="" name="contact_form" id="contact_form" method="post">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label class="form-label fw-bold"  for="contact_name"></label>
+                        <input type="text" class="form-control" placeholder="Enter your Name" id="name" name="uname"
+                            required="">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-bold"  for="contact_name"></label>
+                        <input type="email" class="form-control" placeholder="Enter Email address" id="email"
+                            name="uemail" required="">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-bold"  for="contact_name"></label>
+                        <textarea class="form-control" placeholder="Message" id="message" name="umsgs" rows="4"
+                            required=""></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-success">Send Message</button>
+                    {% if success %}
+                    <div class="alert alert-success">
+                        {{success}}
+                    </div>
+                    {% endif %}
+                </form>
+            </div>
+        </div>
+</div>
+
+
+
+    <!--Main end-->
+
+    {% endblock 'main' %}
